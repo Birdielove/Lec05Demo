@@ -46,7 +46,7 @@ public class CustomAdapter extends BaseAdapter {
             ListData subjectData=arrayList.get(position);
             LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
             convertView = layoutInflater.inflate(R.layout.list_items, parent, false);
-            TextView tittle = convertView.findViewById(R.id.list);
+            TextView tittle = convertView.findViewById(R.id.text);
             tittle.setText(subjectData.attractionNmae.get(position));
             Drawable img = parent.getResources().getDrawable(subjectData.image.get(position));
             img.setBounds(0, 0, 80, 80);
@@ -55,5 +55,6 @@ public class CustomAdapter extends BaseAdapter {
             return convertView;
         }
         return convertView;
+        //a
     }
 }

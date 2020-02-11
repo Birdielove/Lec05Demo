@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -24,11 +26,21 @@ public class MainActivity extends AppCompatActivity {
         List<String> Attractions = Arrays.asList("Magnificent Mile","Navy Pier","Art Institute");
         List<Integer> AttrPics = Arrays.asList(R.drawable.macaron, R.drawable.pier, R.drawable.artinst);
         arrayList.add(new ListData(Attractions,AttrPics));
+        arrayList.add(new ListData(Attractions,AttrPics));
+        arrayList.add(new ListData(Attractions,AttrPics));
         CustomAdapter customAdapter = new CustomAdapter(this, arrayList);
         list.setAdapter(customAdapter);
-        Toast.makeText(getApplicationContext(),String.valueOf(list.getCount()),Toast.LENGTH_SHORT).show();
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast t = Toast.makeText(MainActivity.this, "BBBB", Toast.LENGTH_SHORT);
+                t.show();
+            }
+        });
+
     }
 }
+
 
 
 
