@@ -11,12 +11,12 @@ import android.widget.TextView;
 import java.util.List;
 
 public class ListData  {
-    List<String> attractionNmae;
+    List<String> songName;
     List<Integer> image;
 
 
-    public ListData(List<String> attractionNmae, List<Integer> image) {
-        this.attractionNmae = attractionNmae;
+    public ListData(List<String> songName, List<Integer> image) {
+        this.songName = songName;
         this.image = image;
     }
 

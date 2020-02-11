@@ -48,8 +48,8 @@ public class CustomAdapter extends BaseAdapter {
             LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
             convertView = layoutInflater.inflate(R.layout.layout_items, parent, false);
             TextView tittle = convertView.findViewById(R.id.textView3);
-            tittle.setText(subjectData.attractionNmae.get(position));
-            //Drawable img = parent.getResources().getDrawable(subjectData.image.get(position));
+            tittle.setText(subjectData.songName.get(position));
+            Drawable img = parent.getResources().getDrawable(subjectData.image.get(position));
             //img.setBounds(0, 0, 80, 80);
             tittle.setCompoundDrawables(null, null, null, null);
             tittle.setCompoundDrawablePadding(80);
