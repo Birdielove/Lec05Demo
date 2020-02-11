@@ -42,27 +42,30 @@ public class MainActivity extends AppCompatActivity {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ListData data=customAdapter.arrayList.get(position);
-                if(data.getCurrentPlayingIndex()==position){
+                ListData Listdata=customAdapter.arrayList.get(position);
+                if(Listdata.getCurrentPlayingIndex()==position){
                     if (currentsong != null && currentsong.isPlaying()) {
                         currentsong.pause();
-                        data.setPlayStatus(false);
-                        customAdapter.refrechView();
+                        Listdata.setPlayStatus(false);
+                        customAdapter.refreshView();
                     }
                     else if(currentsong !=null && !currentsong.isPlaying()){
-                        data.setPlayStatus(true);
-                        customAdapter.refrechView();
+                        Listdata.setPlayStatus(true);
+                        customAdapter.refreshView();
                     }
                 }
                 else{
                     //stop current song if playing
                     if(currentsong !=null && currentsong.isPlaying()){
                         currentsong.stop();
-                        customAdapter.refrechView();
-                        //need to prepare if retarting the same media player object.
+                        customAdapter.refreshView();
+                        //need to prepare if restarting the same media player object.
                     }
                     currentsong = MediaPlayer.create(MainActivity.this, songList.get(position));
                     currentsong.start();
+                    Listdata.setCurrentPlayingIndex(position);
+                    Listdata.setPlayStatus(true);
+                    customAdapter.refreshView();
                 }
             }
         });

@@ -41,16 +41,17 @@ public class CustomAdapter extends BaseAdapter {
         return 0;
     }
 
-    public void refrechView(){
+    public void refreshView(){
         notifyDataSetChanged();
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        ListData subjectData = arrayList.get(position);
         if(convertView==null) {
-            ListData subjectData=arrayList.get(position);
             LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
             convertView = layoutInflater.inflate(R.layout.layout_items, parent, false);
+        }
             ImageView imgViewItem = convertView.findViewById(R.id.musicart);
             TextView tittle = convertView.findViewById(R.id.textView3);
             ImageView imageViewPlayPause = convertView.findViewById(R.id.imageView4);
@@ -62,7 +63,6 @@ public class CustomAdapter extends BaseAdapter {
             else{
                 imageViewPlayPause.setImageResource(R.drawable.play);
             }
-        }
         return convertView;
     }
 }
