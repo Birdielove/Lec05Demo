@@ -22,4 +22,21 @@ public class ListData  {
         this.currentPlayingIndex = -1;
         this.playStatus = false;
     }
+    public int getCurrentPlayingIndex() {
+        return currentPlayingIndex;
+    }
+
+    public void setCurrentPlayingIndex(int currentPlayingIndex) {
+        this.currentPlayingIndex = currentPlayingIndex;
+    }
+
+    public boolean isPlayStatus() {
+        return playStatus;
+    }
+
+    public void setPlayStatus(boolean playStatus) {
+        this.playStatus = playStatus;
+    }
+
+
 }

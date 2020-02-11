@@ -41,6 +41,10 @@ public class CustomAdapter extends BaseAdapter {
         return 0;
     }
 
+    public void refrechView(){
+        notifyDataSetChanged();
+    }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if(convertView==null) {
@@ -58,8 +62,6 @@ public class CustomAdapter extends BaseAdapter {
             else{
                 imageViewPlayPause.setImageResource(R.drawable.play);
             }
-            tittle.setCompoundDrawables(null, null, null, null);
-            tittle.setCompoundDrawablePadding(80);
         }
         return convertView;
     }
