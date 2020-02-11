@@ -3,10 +3,12 @@ package com.birdicomputers.lec05demo;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -14,13 +16,18 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
+    MediaPlayer music, drums;
+    Button play, pause;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         ListView list = findViewById(R.id.list);
         ArrayList<ListData> arrayList = new ArrayList<ListData>();
         List<String> Attractions = Arrays.asList("Magnificent Mile","Navy Pier","Art Institute");

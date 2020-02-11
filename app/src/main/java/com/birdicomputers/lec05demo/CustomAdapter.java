@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -45,12 +46,12 @@ public class CustomAdapter extends BaseAdapter {
         if(convertView==null) {
             ListData subjectData=arrayList.get(position);
             LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-            convertView = layoutInflater.inflate(R.layout.list_items, parent, false);
-            TextView tittle = convertView.findViewById(R.id.text);
+            convertView = layoutInflater.inflate(R.layout.layout_items, parent, false);
+            TextView tittle = convertView.findViewById(R.id.textView3);
             tittle.setText(subjectData.attractionNmae.get(position));
-            Drawable img = parent.getResources().getDrawable(subjectData.image.get(position));
-            img.setBounds(0, 0, 80, 80);
-            tittle.setCompoundDrawables(img, null, null, null);
+            //Drawable img = parent.getResources().getDrawable(subjectData.image.get(position));
+            //img.setBounds(0, 0, 80, 80);
+            tittle.setCompoundDrawables(null, null, null, null);
             tittle.setCompoundDrawablePadding(80);
             return convertView;
         }
