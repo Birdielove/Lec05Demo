@@ -12,12 +12,14 @@ import java.util.List;
 
 public class ListData  {
     List<String> songName;
-    List<Integer> image;
-
+    List<Integer> songPicList;
+    int currentPlayingIndex;
+    boolean playStatus;
 
     public ListData(List<String> songName, List<Integer> image) {
         this.songName = songName;
-        this.image = image;
+        this.songPicList = image;
+        this.currentPlayingIndex = -1;
+        this.playStatus = false;
     }
-
 }

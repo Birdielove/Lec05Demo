@@ -21,7 +21,7 @@ import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
-    MediaPlayer music, drums;
+    MediaPlayer ukulele, drums;
     Button play, pause;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast t = Toast.makeText(MainActivity.this, "Works", Toast.LENGTH_SHORT);
-                t.show();
+                //Toast t = Toast.makeText(MainActivity.this, "Works", Toast.LENGTH_SHORT);
+               // t.show();
             }
         });
 

@@ -47,15 +47,20 @@ public class CustomAdapter extends BaseAdapter {
             ListData subjectData=arrayList.get(position);
             LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
             convertView = layoutInflater.inflate(R.layout.layout_items, parent, false);
+            ImageView imgViewItem = convertView.findViewById(R.id.musicart);
             TextView tittle = convertView.findViewById(R.id.textView3);
+            ImageView imageViewPlayPause = convertView.findViewById(R.id.imageView4);
             tittle.setText(subjectData.songName.get(position));
-            Drawable img = parent.getResources().getDrawable(subjectData.image.get(position));
-            //img.setBounds(0, 0, 80, 80);
+            imgViewItem.setImageResource(subjectData.songPicList.get(position));
+            if(position == subjectData.currentPlayingIndex && subjectData.playStatus){
+                imageViewPlayPause.setImageResource(R.drawable.pause);
+            }
+            else{
+                imageViewPlayPause.setImageResource(R.drawable.play);
+            }
             tittle.setCompoundDrawables(null, null, null, null);
             tittle.setCompoundDrawablePadding(80);
-            return convertView;
         }
         return convertView;
-        //a
     }
 }

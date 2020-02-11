@@ -14,11 +14,12 @@
     <TextView
         android:id="@+id/textView3"
         android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
         android:layout_weight=".7"
-        android:textAlignment="center"
-        android:text="TextView" />
+        android:text="@string/SongName"
+        android:layout_gravity="center_vertical"
+        android:textAlignment="center" />
 
     <ImageView
         android:id="@+id/imageView4"
